@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Sahabat International"
+description = "A welcoming Coventry community nonprofit landing page with gatherings, family learning, and an interest registration form for the next event."
+version = "1.0.0"
+id = "artifacts/sahabat-international"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22460
+
+[services.development]
+run = "pnpm --filter @workspace/sahabat-international run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/sahabat-international", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/sahabat-international/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22460"
+BASE_PATH = "/"

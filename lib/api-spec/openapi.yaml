@@ -10,7 +10,41 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: community
+    description: Sahabat community operations
 paths:
+  /next-event:
+    get:
+      operationId: getNextEvent
+      tags: [community]
+      summary: Public details of the next gathering
+      responses:
+        "200":
+          description: Current event information
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NextEvent"
+  /event-interest:
+    post:
+      operationId: registerEventInterest
+      tags: [community]
+      summary: Register interest in the next event
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EventInterestInput"
+      responses:
+        "201":
+          description: Interest registered
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EventInterestConfirmation"
+        "400":
+          description: Invalid form details
   /healthz:
     get:
       operationId: healthCheck
@@ -26,6 +60,41 @@ paths:
                 $ref: "#/components/schemas/HealthStatus"
 components:
   schemas:
+    NextEvent:
+      type: object
+      required: [title, date, venue, details]
+      properties:
+        title:
+          type: string
+        date:
+          type: ["string", "null"]
+          format: date
+        venue:
+          type: ["string", "null"]
+        details:
+          type: string
+    EventInterestInput:
+      type: object
+      additionalProperties: false
+      required: [name, email]
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 120
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        volunteerTiming:
+          type: string
+          enum: [before, after, both]
+    EventInterestConfirmation:
+      type: object
+      required: [message]
+      properties:
+        message:
+          type: string
     HealthStatus:
       type: object
       properties:

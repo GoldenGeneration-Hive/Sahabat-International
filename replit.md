@@ -1,6 +1,6 @@
-# [Project name]
+# Sahabat International
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A first-phase Coventry nonprofit community landing page with event interest registration.
 
 ## Run & Operate
 
@@ -22,15 +22,21 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- Landing page and form: `artifacts/sahabat-international/src/`
+- Public API routes: `artifacts/api-server/src/routes/community.ts`
+- API contract: `lib/api-spec/openapi.yaml`
+- Event and interest database tables: `lib/db/src/schema/community.ts`
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The next event has one editable row (`next_event`, id 1); date and venue start as null. Update this row only once details are confirmed. Never enter a private residential address as a public venue.
+- Interest registrations are stored in `event_interest` for manual follow-up; the site does not send email or claim to do so. Keep access to names/emails limited to trusted organisers.
+- A public event-editing endpoint is intentionally omitted so anonymous visitors cannot change event details.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Welcoming overview of gatherings and pilot family learning.
+- Interest registration with an optional before/after-event volunteering choice.
 
 ## User preferences
 
@@ -38,7 +44,8 @@ _Populate as you build — explicit user instructions worth remembering across s
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Do not show the example event of 19 September 2026 as upcoming.
+- An expired `next_event.date` is hidden by the API so past events never appear upcoming.
 
 ## Pointers
 
