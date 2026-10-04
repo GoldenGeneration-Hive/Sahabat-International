@@ -16,6 +16,7 @@ export const eventInterestTable = pgTable("event_interest", {
   name: text("name").notNull(),
   email: text("email").notNull(),
   volunteerTiming: text("volunteer_timing"),
+  contributionInterests: text("contribution_interests").array().notNull().default([]),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 

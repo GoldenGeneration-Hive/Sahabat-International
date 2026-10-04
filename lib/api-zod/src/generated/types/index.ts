@@ -8,6 +8,7 @@
 
 export * from './eventInterestConfirmation';
 export * from './eventInterestInput';
+export * from './eventInterestInputContributionInterestsItem';
 export * from './eventInterestInputVolunteerTiming';
 export * from './healthStatus';
 export * from './nextEvent';

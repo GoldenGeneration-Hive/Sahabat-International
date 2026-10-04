@@ -37,6 +37,17 @@ A first-phase Coventry nonprofit community landing page with event interest regi
 
 - Welcoming overview of gatherings and pilot family learning.
 - Interest registration with an optional before/after-event volunteering choice.
+- Optional expressions of interest in sharing skills, teaching, mentoring, resources and partnership.
+
+## Public content boundaries
+
+- Use the approved text brief as the content source for this phase; source document uploads are not required.
+- Sahabat is independent, rooted in an Islamic moral and spiritual foundation, and welcomes people of different faiths, cultures and backgrounds.
+- Coventry and Warwick are its base. The grassroots journey began January 2024; the September 2026 working profile records company-limited-by-guarantee incorporation on 3 September 2026. Do not claim charity registration or invent a company number.
+- January 2024–September 2026 impact figures are approximate grassroots records, not all delivery by the newly incorporated company. Omit financial totals.
+- Keep current activities, pilot/emerging programmes, and international ambitions distinct. The physical/digital Sahabat Centre is planned, not operational.
+- G-Hive is an independent collaborating social enterprise. Bee-Bright, Spice Journey and Golden Generation Fellowship must not be portrayed as Sahabat-owned. Individual contributions do not establish institutional endorsement.
+- Never promise funding, scholarships, admissions, employment or immigration outcomes. Keep internal governance, vendor choices and sensitive administrative details off the public page.
 
 ## User preferences
 

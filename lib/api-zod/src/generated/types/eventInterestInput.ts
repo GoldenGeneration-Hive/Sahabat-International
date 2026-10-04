@@ -5,6 +5,7 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
+import type { EventInterestInputContributionInterestsItem } from './eventInterestInputContributionInterestsItem';
 import type { EventInterestInputVolunteerTiming } from './eventInterestInputVolunteerTiming';
 
 export interface EventInterestInput {
@@ -16,4 +17,6 @@ export interface EventInterestInput {
   /** @maxLength 254 */
   email: string;
   volunteerTiming?: EventInterestInputVolunteerTiming;
+  /** @maxItems 5 */
+  contributionInterests?: EventInterestInputContributionInterestsItem[];
 }

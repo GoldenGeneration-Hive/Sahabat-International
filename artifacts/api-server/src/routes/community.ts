@@ -36,6 +36,7 @@ router.post("/event-interest", async (req, res): Promise<void> => {
     name: parsed.data.name.trim(),
     email: parsed.data.email.trim(),
     volunteerTiming: parsed.data.volunteerTiming ?? null,
+    contributionInterests: [...new Set(parsed.data.contributionInterests ?? [])],
   });
   res.status(201).json(RegisterEventInterestResponse.parse({
     message: "Thank you — your interest has been registered. The next event details will be announced when confirmed.",

@@ -26,12 +26,15 @@ export const registerEventInterestBodyNameMax = 120;
 
 export const registerEventInterestBodyEmailMax = 254;
 
+export const registerEventInterestBodyContributionInterestsMax = 5;
+
 
 
 export const RegisterEventInterestBody = zod.object({
   "name": zod.string().min(1).max(registerEventInterestBodyNameMax),
   "email": zod.string().email().max(registerEventInterestBodyEmailMax),
-  "volunteerTiming": zod.enum(['before', 'after', 'both']).optional()
+  "volunteerTiming": zod.enum(['before', 'after', 'both']).optional(),
+  "contributionInterests": zod.array(zod.enum(['skills', 'teaching', 'mentoring', 'resources', 'partnership'])).max(registerEventInterestBodyContributionInterestsMax).optional()
 })
 
 export const RegisterEventInterestResponse = zod.object({

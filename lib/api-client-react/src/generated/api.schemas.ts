@@ -23,6 +23,17 @@ export const EventInterestInputVolunteerTiming = {
   both: 'both',
 } as const;
 
+export type EventInterestInputContributionInterestsItem = typeof EventInterestInputContributionInterestsItem[keyof typeof EventInterestInputContributionInterestsItem];
+
+
+export const EventInterestInputContributionInterestsItem = {
+  skills: 'skills',
+  teaching: 'teaching',
+  mentoring: 'mentoring',
+  resources: 'resources',
+  partnership: 'partnership',
+} as const;
+
 export interface EventInterestInput {
   /**
      * @minLength 1
@@ -32,6 +43,8 @@ export interface EventInterestInput {
   /** @maxLength 254 */
   email: string;
   volunteerTiming?: EventInterestInputVolunteerTiming;
+  /** @maxItems 5 */
+  contributionInterests?: EventInterestInputContributionInterestsItem[];
 }
 
 export interface EventInterestConfirmation {

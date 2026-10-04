@@ -89,6 +89,13 @@ components:
         volunteerTiming:
           type: string
           enum: [before, after, both]
+        contributionInterests:
+          type: array
+          maxItems: 5
+          uniqueItems: true
+          items:
+            type: string
+            enum: [skills, teaching, mentoring, resources, partnership]
     EventInterestConfirmation:
       type: object
       required: [message]
